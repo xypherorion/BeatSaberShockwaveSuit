@@ -64,10 +64,6 @@
     <None Include="lib\ShockWaveIMU.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="lib\ShockwaveInterop.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="lib\ShockwaveInterop.pdb" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -112,9 +108,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>X:\Games\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ShockwaveInterop, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>X:\Games\steamapps\common\Beat Saber\Libs\ShockwaveInterop.dll</HintPath>
+    <Reference Include="ShockwaveSharedInterop">
+      <HintPath>..\..\APIs\Shockwave\ShockwaveInterop_1.0.0.2\ShockwaveInterop_1.0.0.2\bin\Release\ShockwaveSharedInterop.dll</HintPath>
     </Reference>
     <Reference Include="SongCore">
       <HintPath>X:\Games\steamapps\common\Beat Saber\Plugins\SongCore.dll</HintPath>
@@ -175,6 +170,10 @@
     <Reference Include="Zenject-usage">
       <HintPath>X:\Games\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Zenject-usage.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\ShockwaveSharedInterop.dll" />
+    <Content Include="lib\ShockwaveSharedInterop.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

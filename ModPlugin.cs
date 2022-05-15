@@ -84,7 +84,7 @@ namespace ShockwaveSuit {
         public async Task WaitForSuit() {
             Log($"~~~SHOCKWAVE~~~ Waiting for Suit");
             suit = ShockwaveManager.Instance;
-            suit.InitializeSuit(0);
+            suit.InitializeSuit();
 
             suit.enableBodyTracking = false;
             while (!ShockwaveManager.Instance.Ready && ShockwaveManager.Instance.error == 0) { 
