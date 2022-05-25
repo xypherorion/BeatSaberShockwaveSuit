@@ -491,7 +491,7 @@ namespace ShockwaveSuit {
 
             NoteData noteData = note.noteData;
             if (ModPlugin.cfg.hapticsMode == ModConfiguration.HapticsResponseMode.OnSlash) {
-                int duration = 100;
+                int duration = 200;
                 switch (noteData.noteLineLayer) {
                     case NoteLineLayer.Base:
                         switch (noteData.lineIndex) {
@@ -752,11 +752,14 @@ namespace ShockwaveSuit {
 
 
         public async static Task PlayPulse(List<ShockwaveManager.HapticGroup> pulseList) {
-            while (pulseList.Count > 0) {
-                ShockwaveManager.Instance?.SendHapticGroup(pulseList[0], 1.0f, 200);
-                pulseList.RemoveAt(0);
+            List<ShockwaveManager.HapticGroup> pulses = new List<ShockwaveManager.HapticGroup>();
+            pulses.AddRange(pulseList);
+            int pulseDelay = ModPlugin.cfg.saberPulseDelay;
 
-                await Task.Delay(ModPlugin.cfg.saberPulseDelay);
+            while (pulses.Count > 0) {
+                ShockwaveManager.Instance?.SendHapticGroup(pulses[0], 1.0f, 200);
+                pulses.RemoveAt(0);
+                await Task.Delay(pulseDelay);
             }
         }
 

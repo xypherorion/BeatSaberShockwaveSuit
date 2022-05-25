@@ -10,7 +10,8 @@ namespace ShockwaveSuit.UI {
     internal class ModConfigFlowCoordinator : FlowCoordinator {
         public void Awake() {
             ModPlugin.Log("Creating Configuration View Controller");
-            if (!configViewController) configViewController = BeatSaberUI.CreateViewController<ConfigurationViewController>();
+            if (!configViewController)
+                configViewController = BeatSaberUI.CreateViewController<ConfigurationViewController>();
         }
 
         protected override void BackButtonWasPressed(ViewController topViewController) {
@@ -22,7 +23,7 @@ namespace ShockwaveSuit.UI {
                 if (firstActivation) {
                     SetTitle("Shockwave Suit Settings");
                     showBackButton = true;
-                    ProvideInitialViewControllers(configViewController);
+                    ProvideInitialViewControllers(configViewController, null, null, null, null);
                 }
             } catch (Exception e) {
                 ModPlugin.Log(e.Message);
