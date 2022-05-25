@@ -19,6 +19,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using BS_Utils.Utilities;
+using UnityEngine.PlayerLoop;
 
 namespace ShockwaveSuit {
 
@@ -29,7 +30,7 @@ namespace ShockwaveSuit {
         }
         public static string ModName = "Shockwave Suit";
         public string Name => $"{ModName}";// {Version.ToString()}";
-        public string Version => "1.22.0";// System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        public string Version => "1.22.1";// System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public static bool writeLogOnExit = true;
         public static string modDataPath = $"./UserData/{ModName}";
@@ -64,6 +65,8 @@ namespace ShockwaveSuit {
             Instance = this;
             Task.Run(() => WaitForSuit());
             LoadModConfiguration();
+
+            //Task.Run(() => Update());
         }
 
         ~ModPlugin() {
@@ -332,6 +335,10 @@ namespace ShockwaveSuit {
                 Log($"Found FPFC!");
 
             Log($"OnStart Finished");
+        }
+
+        public void Update() {
+
         }
 
         // Shockwave LEDS:
@@ -746,7 +753,7 @@ namespace ShockwaveSuit {
 
         public async static Task PlayPulse(List<ShockwaveManager.HapticGroup> pulseList) {
             while (pulseList.Count > 0) {
-                ShockwaveManager.Instance?.SendHapticGroup(pulseList[0], 1.0f, ModPlugin.cfg.saberPulseDelay);
+                ShockwaveManager.Instance?.SendHapticGroup(pulseList[0], 1.0f, 200);
                 pulseList.RemoveAt(0);
 
                 await Task.Delay(ModPlugin.cfg.saberPulseDelay);

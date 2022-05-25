@@ -21,7 +21,7 @@ namespace ShockwaveSuit
         }
         public HapticsResponseMode hapticsMode = HapticsResponseMode.OnSlash;
         public bool ledResponse = true;
-        public int saberPulseDelay = 50;
+        public int saberPulseDelay = 200;
 
         public bool debug = false;
         public bool verbose = false;
