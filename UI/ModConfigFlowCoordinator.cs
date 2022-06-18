@@ -8,6 +8,8 @@ using HMUI;
 
 namespace ShockwaveSuit.UI {
     internal class ModConfigFlowCoordinator : FlowCoordinator {
+        private ConfigurationViewController configViewController = null;
+
         public void Awake() {
             ModPlugin.Log("Creating Configuration View Controller");
             if (!configViewController)
@@ -31,7 +33,5 @@ namespace ShockwaveSuit.UI {
                     ModPlugin.Log(e.InnerException.Message);
             }
         }
-
-        private ConfigurationViewController configViewController = null;
     }
 }

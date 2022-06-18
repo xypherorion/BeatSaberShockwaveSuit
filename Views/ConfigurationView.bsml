@@ -1,12 +1,9 @@
 ﻿<vertical>
-  <!--<horizontal bg='panel-top' pad-left='10' pad-right='10' horizontal-fit='PreferredSize'>
-    <text text='SpinMod Configuration' align='Center' font-size='7'></text>
-  </horizontal>-->
   <horizontal>
     <vertical preferred-width="75">
-      <dropdown-list-setting text='Haptics Mode' font-size='4' value='selected-haptics-mode' options='haptics-mode-list' apply-on-change='true' hover-hint='SaberPulse - Your Arms surge with power%0D%0AOnSlash - Feel the slash on your body%0D%0AOnMiss - Feel the miss on your body'/>
+      <dropdown-list-setting text='Haptics Mode' font-size='4' value='selected-haptics-mode' options='haptics-mode-list' apply-on-change='true' hover-hint='SaberPulse - Your Arms surge with power%0D%0AOnSlash - Feel the slash on your body%0D%0AOnMiss - Feel the miss on your body'></dropdown-list-setting>
       <checkbox text='Enable LED Response' value='enable-LEDs' apply-on-change='true' hover-hint='LEDs on Shockwave can respond to events'></checkbox>
-      <slider-setting text='Saber Pulse Delay' min='10' max='200' increment='10' value='saber-pulse-delay' integer-only='false' apply-on-change='true' hover-hint='The rate in milliseconds at which a Saber Pulse propogates (Lower is faster)%0D%0A[SaberPulse mode Only]'></slider-setting>
+      <slider-setting text='Saber Pulse Delay' min='10' max='200' increment='10' value='saber-pulse-delay' integer-only='true' apply-on-change='true' hover-hint='The rate in milliseconds at which a Saber Pulse propogates (Lower is faster)%0D%0A[SaberPulse mode Only]' ></slider-setting>
     </vertical>
   </horizontal>
 </vertical>

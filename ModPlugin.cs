@@ -30,7 +30,7 @@ namespace ShockwaveSuit {
         }
         public static string ModName = "Shockwave Suit";
         public string Name => $"{ModName}";// {Version.ToString()}";
-        public string Version => "1.22.1";// System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        public string Version => "1.23.0";// System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public static bool writeLogOnExit = true;
         public static string modDataPath = $"./UserData/{ModName}";
